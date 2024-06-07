@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./position.component.css']
 })
 export class PositionComponent implements OnInit {
-  sidebarExpanded: boolean = true;
+  @Input() isExpanded: boolean = false;
+  @Output() toggleSidebar: EventEmitter<boolean> = new EventEmitter<boolean>();
+
+  handleSidebarToggle = () => this.toggleSidebar.emit(!this.isExpanded);
 
   constructor() { }
 
