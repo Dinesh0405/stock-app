@@ -1,167 +1,45 @@
-<app-sidebar [isExpanded]="sidebarExpanded" (toggleSidebar)="sidebarExpanded = !sidebarExpanded"></app-sidebar>
+<app-sidebar [isExpanded]="sidebarExpanded"></app-sidebar>
 <div class="content" [ngClass]="{ 'sidebarExpanded': sidebarExpanded }">
   <router-outlet></router-outlet>
 </div>
-<div class="navBar">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <div class="d-flex  mr-sm-2 ">
-                <h6  style="color: white; " >Bank Nifty</h6>
-                <h6  style="color: green; padding-left: 5px;" >48,971.65</h6>
-                </div>
-                <div class="d-flex  mr-sm-2 ">
-                <h6  style="color: white;" >Nifty</h6>
-                <h6  style="color: green; padding-left: 5px;" >22,957.10</h6>
-            </div>
-          <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
-            <form class="form-inline">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search Stocks" aria-label="Search ">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-              </form>
-              <div class="d-flex">
-                <h5 style="color:white">Corporate ID : {{name}}</h5>
-              <img src="../../assets/satish.jpeg" alt="Avatar">
-            </div>
-          <!-- </div> -->
-        </div>
-      </nav>
+<app-nav-bar></app-nav-bar>
+<div class="dashboard">
+  <div class="chart d-flex" style="padding: 20px 250px;justify-content: space-between;">
+    <div class="card" style="width: 310px;justify-content: space-between;">
+      <h5 class="card-header" style="text-align: center;background: black;
+      color: white;">Invested Value</h5>
+      <div class="card-body" style="background: green;
+      color: white;">
+        <h2 class="card-text" style="padding: 20px;">₹3,90,30,250.00</h2>
 
+      </div>
+    </div>
+    <div class="card" style="width: 310px;">
+      <h5 class="card-header" style="text-align: center;background: black;
+      color: white;">Current Value</h5>
+      <div class="card-body" style="background: red;
+      color: white;">
+        <h2 class="card-text" style="padding: 20px;">₹3,75,57,250.00</h2>
 
-</div>
-<div class="container">
-    <h1 style="text-align: center; font-weight: bold;"> Market Holding Position </h1>
-<table class="table table-dark">
-    <thead>
-      <tr style="background-color: #6d6e7e">
-        <th scope="col" >Ticker</th>
-        <th scope="col">Value/Cost</th>
-        <th scope="col">Daily</th>
-        <th scope="col">Total Change</th>
-        <th scope="col">Total</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">HDFC BANK</th>
-        <td>₹15,17,100.00</td>
-        <td style="color: green;">24,549.88</td>
-        <td style="color: green;">8.80%</td>
-        <td style="color: green;">1,42,900.00</td>
-      </tr>
-      <tr>
-        <th scope="row">ICICI BANK</th>
-        <td>₹11,31,150.00</td>
-        <td style="color: red;">3,593</td>
-        <td style="color: green;">24.71%</td>
-        <td style="color: green;">2,24,49.00</td>
+      </div>
+    </div>
+    <div class="card" style="width: 280px;">
+      <h5 class="card-header" style="text-align: center;background: black;
+      color: white;">Total Change</h5>
+     <div class="card-body" style="background: green;
+     color: white;">
+        <h2 class="card-title" style="padding: 20px;">₹14,73,250.00</h2>
+      </div>
+    </div>
+      <div class="card" style="width: 280px;">
+      <h5 class="card-header" style="text-align: center;background: black;
+      color: white;">Daily Change </h5>
+     <div class="card-body" style="background: green;
+     color: white;">
+        <h2 class="card-text" style="padding: 20px;">₹1,23,849.00</h2>
+      </div>
+    </div>
 
-      </tr>
-      <tr>
-        <th scope="row">Reliance.NS</th>
-        <td>₹28,70,100.00</td>
-        <td style="color: green;">19,400.15</td>
-        <td style="color: green;">12.71%</td>
-        <td style="color: green;">3,23,100.00</td>
-      </tr>
-      <tr>
-        <th scope="row">AXISBANK.NS</th>
-        <td>₹5,87,000.00</td>
-        <td style="color: green;">4,300.15</td>
-        <td style="color: green;">7.71%</td>
-        <td style="color: green;">1,54,100.00</td>
-      </tr>
-      <tr>
-        <th scope="row">KOTAKBANK.NS</th>
-        <td>₹17,03,000.00</td>
-        <td style="color: green;">5,500.15</td>
-        <td style="color: red;">-7.71%</td>
-        <td style="color: green;">-1,36,100.00</td>
-      </tr>
-      <tr>
-        <th scope="row">TATASTEEL.NS</th>
-        <td>₹2,50,100.00</td>
-        <td style="color: green;">970.15</td>
-        <td style="color: green;">63.71%</td>
-        <td style="color: green;">01,01,300.00</td>
-      </tr>
-      <tr>
-        <th scope="row">SAIL.NS</th>
-        <td>₹1,69,100.00</td>
-        <td style="color: green;">200.15</td>
-        <td style="color: green;">82.71%</td>
-        <td style="color: green;">76,500.00</td>
-      </tr>
-      <tr>
-        <th scope="row">PAYTM.NS</th>
-        <td>₹3,40,100.00</td>
-        <td style="color: red;">-15,299.15</td>
-        <td style="color: red;">-60.71%</td>
-        <td style="color: red;">5,14,300.00</td>
-      </tr>
-      <tr>
-        <th scope="row">TATAMOTORS.NS</th>
-        <td>₹4,80,100.00</td>
-        <td style="color: green;">-899.15</td>
-        <td style="color: green;">52.71%</td>
-        <td style="color: green;">1,65,300.00</td>
-      </tr>
-      <tr>
-        <th scope="row">MARUTI.BO</th>
-        <td>₹63,25,100.00</td>
-        <td style="color: green;">34,700.15</td>
-        <td style="color: green;">30.71%</td>
-        <td style="color: green;">15,20,300.00</td>
-      </tr>
-      <tr>
-        <th scope="row">INFY.NS</th>
-        <td>₹14,65,100.00</td>
-        <td style="color: green;">7,300</td>
-        <td style="color: green;">56.71%</td>
-        <td style="color: green;">1,45,300.00</td>
-      </tr>
-      <tr>
-        <th scope="row">JUBLFOOD.NS</th>
-        <td>₹4,66,700.00</td>
-        <td style="color: green;">8,250.15</td>
-        <td style="color: green;">30.71%</td>
-        <td style="color: green;">13,250.00</td>
-      </tr>
-      <tr>
-        <th scope="row">UPL.NS</th>
-        <td>₹25,79,100.00</td>
-        <td style="color: green;">24,740.15</td>
-        <td style="color: green;">30.71%</td>
-        <td style="color: green;">10,71,300.00</td>
-      </tr>
-      <tr>
-        <th scope="row">POLYCAB.NS</th>
-        <td>₹1,33,68,100.00</td>
-        <td style="color: green;">84,000.15</td>
-        <td style="color: green;">38.71%</td>
-        <td style="color: green;">37,18,300.00</td>
-      </tr>
-      <tr>
-        <th scope="row">TATAELEXI.NS</th>
-        <td>₹73,74,950.00</td>
-        <td style="color: green;">41,600.15</td>
-        <td style="color: green;">26.71%</td>
-        <td style="color: green;">26,25,300.00</td>
-      </tr>
-      <tr>
-        <th scope="row">TATATECH.NS</th>
-        <td>₹73,74,950.00</td>
-        <td style="color: green;">34,599.15</td>
-        <td style="color: green;">0.71%</td>
-        <td style="color: green;">1,30,300.00</td>
-      </tr>
-     
-      <tr style="background-color: #6d6e7e;">
-        <th scope="row"><b>UNREALIZED</b></th>
-        <td><b>₹3,90,30,250.00</b></td>
-        <td style="color: white;"><b>1,23,849.15</b></td>
-        <td style="color: white;"><b>3.92%</b></td>
-        <td style="color: white;"><b>14,73,250.00</b></td>
-      </tr>
-    </tbody>
-  </table>
+  </div>
+
 </div>
