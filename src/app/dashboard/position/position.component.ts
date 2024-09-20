@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-position',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./position.component.css']
 })
 export class PositionComponent implements OnInit {
-  @Input() isExpanded: boolean = false;
+  @Input() isExpanded: boolean = true;
   @Output() toggleSidebar: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   handleSidebarToggle = () => this.toggleSidebar.emit(!this.isExpanded);
